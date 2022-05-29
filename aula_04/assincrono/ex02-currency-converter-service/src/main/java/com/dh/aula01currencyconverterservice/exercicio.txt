@@ -1,0 +1,17 @@
+Objetivo:
+Execute o servidor Eureka para registro e descoberta de microsserviços.
+
+Enunciado:
+Para o site de um importante jornal, nos pediram para desenvolver uma API que nos informasse o preço de diferentes moedas.
+
+Nosso tech lead nos pede para:
+
+Criar um novo serviço e configurar Eureka server.
+Configurar para executar na porta 8761.
+Criar um serviço que retorne o preço atual de uma moeda em relação a outra.
+Definir o nome do serviço como currency-converter-service
+Criar um endpoint que receba dois parâmetros: from e to. Esse endpoint deve retornar o preço da moeda especificada.
+Por exemplo, uma solicitação usando o método GET para http://localhost:8080/converter?from=USD&to=ARS
+poderia responder: 104,76. No momento retornar um número aleatório.
+Configurar o cliente Eureka no serviço criado acima.
+Executar o servidor Eureka com o microsserviço e visualizar a lista de serviços registrados no painel.

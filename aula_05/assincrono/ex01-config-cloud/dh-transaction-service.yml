@@ -1,0 +1,3 @@
+server:
+  port:${PORT:8080}
+message: configuracao padrao com spring cloud config! Teste - transaction

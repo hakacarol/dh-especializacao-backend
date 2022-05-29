@@ -1,0 +1,6 @@
+spring:
+  application:
+    name: dh-caixa-dev
+  config:
+    import:
+      confiserver:http://localhost:8888
