@@ -7,7 +7,12 @@ spring:
         config:
             server:
                 git:
-                    uri: https://github.com/hakacarol/dh-especializacao-backend/tree/main/aula_05/assincrono/ex01-config-cloud
+                    uri: https://github.com/hakacarol/dh-especializacao-backend
+                    #username:
+                    #password:
+                    default-label: main/aula_05
+                    search-paths:
+                        - 'config-cloud'
 
 
 #spring:
