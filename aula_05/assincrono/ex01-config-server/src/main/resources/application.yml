@@ -11,7 +11,7 @@ spring:
                     default-label: main
                     search-paths:
                         - 'config-cloud*'
-                        - 
+
 #spring:
 #    application:
 #        name: account-service

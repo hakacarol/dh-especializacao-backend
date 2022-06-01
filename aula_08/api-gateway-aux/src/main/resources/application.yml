@@ -1,0 +1,32 @@
+server:
+  port: 8080
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+
+spring:
+  application:
+    name: api-gateway-aux
+  cloud:
+    gateway:
+      default-filters: #Filtro por default de todas as requests realizadas ao gateway
+        - name: LogFilter
+      routes:
+        - id: subscriptionRoute #Nome/identificação da rota
+#         uri: http://localhost:8084 - para onde irá ser redirecionado
+          uri: lb://SUBSCRIPTION-SERVICE #nome que está no Eureka
+          predicates: #(regras de análises) condição para ir para determinado endpoint. ex.: quando chegar uma requisição que comece com subscription, esta requisição irá ser redirecionada a porta 8084.
+            - Path=/subscription/**
+        - id: courseRoute
+#          uri: http://localhost:8089
+          uri: lb://COURSE-SERVICE
+          predicates:
+            - Path=/course/**
+          filters:
+            - AddRequestHeader=user-request-header, custom-user-request-header
+            - AddResponseHeader=user-response-header, custom-user-response-header
+
+
+

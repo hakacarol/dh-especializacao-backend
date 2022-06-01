@@ -1,0 +1,41 @@
+#server:
+#    port: ${PORT:8888}
+#spring:
+#  application:
+#    name: config-server
+#  cloud:
+#    config:
+#      server:
+#        git:
+#          uri: https://github.com/tulioviglione/configCloud
+
+server:
+  port: 8888
+spring:
+  application:
+    name: config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/hakacarol/dh-especializacao-backend
+          default-label: main
+          search-paths:
+            - 'config-cloud*'
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+management:
+  info:
+    env:
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+info:
+  name: Actuator informação
+  author: Teste
+  severity: Medio
