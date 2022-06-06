@@ -17,7 +17,8 @@ spring:
         - id: subscriptionRoute #Nome/identificação da rota
 #         uri: http://localhost:8084 - para onde irá ser redirecionado
           uri: lb://SUBSCRIPTION-SERVICE #nome que está no Eureka
-          predicates: #(regras de análises) condição para ir para determinado endpoint. ex.: quando chegar uma requisição que comece com subscription, esta requisição irá ser redirecionada a porta 8084.
+          predicates: #(regras de análises) condição para ir para determinado endpoint.
+#          ex.: quando chegar uma requisição que comece com subscription, esta requisição irá ser redirecionada a porta 8084.
             - Path=/subscription/**
         - id: courseRoute
 #          uri: http://localhost:8089
