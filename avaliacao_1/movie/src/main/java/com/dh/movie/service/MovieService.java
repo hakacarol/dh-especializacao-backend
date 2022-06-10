@@ -13,6 +13,10 @@ public class MovieService {
     @Autowired
     private MovieRepository movieRepository;
 
+//    public void save(Movie movie) {
+//        movieRepository.save(movie);
+//    }
+
     public List<Movie> findByGenre(String genre) {
         return movieRepository.findByGenre(genre);
     }
