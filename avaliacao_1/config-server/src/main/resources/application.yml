@@ -7,7 +7,7 @@ spring:
     config:
       server:
         git:
-          uri: https://github.com/hakacarol/dh-especializacao-backend/
+          uri: https://github.com/hakacarol/dh-especializacao-backend
           default-label: main
           search-paths:
-            - 'config-cloud*'
+            - 'cloud-config-avaliacao-1*'
