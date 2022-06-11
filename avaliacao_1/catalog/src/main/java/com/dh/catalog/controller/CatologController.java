@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/catalog")
 public class CatologController {
@@ -15,8 +17,7 @@ public class CatologController {
     private CatalogService catalogService;
 
     @GetMapping("/{genre}")
-    public String findMovies(@PathVariable String genre) {
+    public List<Object> findMovies(@PathVariable String genre) {
         return catalogService.getMovies(genre);
     }
-
 }

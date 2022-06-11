@@ -15,6 +15,12 @@ public class MovieController {
     @Autowired
     private MovieService movieService;
 
+    @PostMapping()
+    public ResponseEntity<Movie>saveMovie(@RequestBody Movie movie) {
+        Movie savedMovie = movieService.saveMovie(movie);
+        return ResponseEntity.ok(savedMovie);
+    }
+
     @GetMapping("/{genre}")
     public ResponseEntity<List<Movie>> findByGenre(@PathVariable String genre) {
         List<Movie> movies = movieService.findByGenre(genre);

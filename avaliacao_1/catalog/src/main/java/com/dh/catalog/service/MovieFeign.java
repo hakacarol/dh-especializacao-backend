@@ -5,9 +5,11 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-@FeignClient(value= "MOVIE")
+import java.util.List;
+
+@FeignClient(value = "MOVIE")
 public interface MovieFeign {
 
-    @RequestMapping(method = RequestMethod.GET, value = "/catalog/{genre}")
-    String findMovies(@PathVariable String genre);
+    @RequestMapping(method = RequestMethod.GET, value = "/movies/{genre}")
+    List<Object> findMovies(@PathVariable String genre);
 }
