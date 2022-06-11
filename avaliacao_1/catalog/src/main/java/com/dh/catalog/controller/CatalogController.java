@@ -11,7 +11,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/catalog")
-public class CatologController {
+public class CatalogController {
 
     @Autowired
     private CatalogService catalogService;
