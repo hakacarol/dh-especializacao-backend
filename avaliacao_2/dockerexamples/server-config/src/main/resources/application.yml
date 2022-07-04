@@ -1,0 +1,13 @@
+server:
+  port: 8888
+
+spring:
+  application:
+    name: config-server
+  zipkin:
+    base-url: http://zipkin-service:9411/
+  cloud:
+    config:
+      server:
+        git:
+          uri: ${HOME}/IdeaProjects/digitalhouse/A1B1/zipados/aula16/exercicioguiado/configs

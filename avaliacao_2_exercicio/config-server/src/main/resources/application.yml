@@ -1,0 +1,27 @@
+server:
+  port: 8888
+spring:
+  application:
+    name: config-service
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/hakacarol/dh-especializacao-backend
+          default-label: main
+          search-paths:
+            - 'cloud-config*'
+
+eureka:
+  instance:
+    hostname: eureka-service
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    service-url:
+      defaultZone: http://${eureka.instance.hostname}:8761/eureka
+
+#eureka:
+#  client:
+#    serviceUrl:
+#      defaultZone: http://eureka-service:8761/eureka/
